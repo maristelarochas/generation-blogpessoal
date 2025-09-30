@@ -1,8 +1,9 @@
-import { Inject } from "@nestjs/common";
+import { HttpException, HttpStatus, Inject, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Tema } from "src/tema/entities/tema.entity";
 import { DeleteResult, ILike, Repository } from "typeorm";
 
+@Injectable()
 export class TemaService {
     constructor(
         @InjectRepository(Tema)
@@ -26,9 +27,8 @@ export class TemaService {
                 postagem: true
             }
         });
-        
         if (!tema)
-            throw new Error('Tema não encontrado!');
+            throw new HttpException('Tema não encontrado!', HttpStatus.NOT_FOUND);
         return tema;
     }
 

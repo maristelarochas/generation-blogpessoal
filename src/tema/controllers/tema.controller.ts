@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from "@nestjs/common";
-import { TemaService } from "src/services/tema.service";
+import { TemaService } from "src/tema/services/tema.service";
 import { Tema } from "src/tema/entities/tema.entity";
 
 @Controller("/temas")
