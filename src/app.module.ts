@@ -24,7 +24,7 @@ import { UsuarioModule } from './usuario/usuario.module';
     PostagemModule,
     TemaModule,
     AuthModule,
-    UsuarioModule
+    UsuarioModule,
   ],
   controllers: [],
   providers: [],
